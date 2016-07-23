@@ -1,3 +1,6 @@
+/*
+  Source code for one paper in sips 2016.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -344,7 +347,7 @@ inline U8* HashTable<B>::operator[](U32 i) {
 	if (t[i + 16] == chk) { hash_count[1]++;  return t + i + 16; }
 	if (t[i + 32] == chk) { hash_count[2]++; return t + i + 32; }
 
-	//if check sum failed£º
+	//if check sum failedï¼š
 	if (t[i + 1] > t[i + 16 + 1] || t[i + 1] > t[i + 32 + 1]){
 		i += 16; hash_count[3]++;
 	}
@@ -601,7 +604,7 @@ private:
 	FILE* archive;         // Compressed data file
 	U32 x1, x2;            // Range, initially [0, 1), scaled by 2^32
 	U32 x;                 // Decompress mode: last 4 input bytes of archive
-	enum { BUFSIZE = 0x20000 }; // 1 Mb ½øÐÐÒ»´Î block ¸üÐÂ£¬¼õÉÙÎÄ¼þ¶ÁÈ¡ËÙ¶È
+	enum { BUFSIZE = 0x20000 }; // 1 Mb è¿›è¡Œä¸€æ¬¡ block æ›´æ–°ï¼Œå‡å°‘æ–‡ä»¶è¯»å–é€Ÿåº¦
 	static unsigned char* buf; // Compression output buffer, size BUFSIZE
 	int usize, csize;      // Buffered uncompressed and compressed sizes
 
@@ -690,7 +693,7 @@ void Encoder::flush() {
 	}
 }
 
-static unsigned long total_usize = 0;  //×ÜµÄÒÑÑ¹ËõÎÄ¼þ´óÐ¡
+static unsigned long total_usize = 0;  //æ€»çš„å·²åŽ‹ç¼©æ–‡ä»¶å¤§å°
 
 void lpaq1(FILE* in, FILE* out, Mode mode) {
 	if (mode == COMPRESS) {
@@ -725,7 +728,7 @@ void store(FILE* in, FILE* out) {
 	assert(out);
 
 	// Store in blocks
-	const int BLOCKSIZE = 0x100000; // 128KB/block---->encoder ´¦<<4
+	const int BLOCKSIZE = 0x100000; // 128KB/block---->encoder å¤„<<4
 	//const int BLOCKSIZE = 1 << 17;
 	static char* buf = 0;
 	if (!buf) alloc(buf, BLOCKSIZE);
