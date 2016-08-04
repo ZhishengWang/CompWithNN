@@ -5,4 +5,4 @@
 * Just do it in my sparetime.
 
 ## Reference
-* [Towards Conceptual Compression](http://arxiv.org/abs/1604.08772), Gregor K, Besse F, Rezende D J, et al
+* [ Towards Conceptual Compression](http://arxiv.org/abs/1604.08772) (Gregor K, Besse F, Rezende D J, et al)
